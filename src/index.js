@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+
+const App = () => (
+  <h1>Init!</h1>
+);
 
 ReactDOM.render(
   <App />,
