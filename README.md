@@ -1,3 +1,5 @@
+## The project for my first blog
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -1218,10 +1220,10 @@ You can find instructions in [Deploying React with Zero Configuration](https://b
 
 Sometimes `npm run build` works locally but fails during deploy via Heroku with an error like this:
 
-```  
+```
 remote: Failed to create a production build. Reason:
 remote: Module not found: Error: Cannot resolve 'file' or 'directory'
-MyDirectory in /tmp/build_1234/src  
+MyDirectory in /tmp/build_1234/src
 ```
 
 This means you need to ensure that the lettercase of the file or directory you `import` matches the one you see on your filesystem or on GitHub.
