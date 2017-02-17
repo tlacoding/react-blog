@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => (
-  <h1>Init!</h1>
-);
+import './styles/main.css';
+
+import App from './components/App';
 
 ReactDOM.render(
   <App />,
