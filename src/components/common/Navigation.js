@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link, IndexLink } from 'react-router';
+
 import * as siteConfig from '../../constants/siteConfig';
 
 export default class Navigation extends Component {
@@ -32,22 +34,22 @@ export default class Navigation extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href={siteConfig.SITE_URL}>{siteConfig.SITE_TITLE}</a>
+            <IndexLink to="/" className="navbar-brand">{siteConfig.SITE_TITLE}</IndexLink>
           </div>
 
           <div className="collapse navbar-collapse" id="main-navbar">
             <ul className="nav navbar-nav navbar-right">
-              <li><a href={siteConfig.SITE_URL}>Home</a></li>
-              <li><a href="http://deanattali.com">About me</a></li>
-              <li><a href="http://deanattali.com/aboutme/#feed-meeee">Contact</a></li>
+              <li><IndexLink to="/" className="navbar-brand" activeClassName="active">{siteConfig.SITE_TITLE}</IndexLink></li>
+              <li><Link to="about-me" activeClassName="active">About me</Link></li>
+              <li><Link to="contact" activeClassName="active">Contact</Link></li>
             </ul>
           </div>
 
           <div className="avatar-container">
             <div className="avatar-img-border">
-              <a href={siteConfig.SITE_URL}>
+              <Link to="/">
                 <img role="presentation" className="avatar-img" src={process.env.PUBLIC_URL + '/assets/img/avatar-icon.png'} />
-            </a>
+              </Link>
             </div>
           </div>
 
