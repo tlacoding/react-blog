@@ -25,7 +25,7 @@ export default class Navigation extends Component {
             <ul className="nav navbar-nav navbar-right">
               <li><a href={siteConfig.SITE_URL}>Home</a></li>
               <li><a href="http://deanattali.com">About me</a></li>
-              <li><a href="http://deanattali.com/aboutme/#feed-meeee">Support me</a></li>
+              <li><a href="http://deanattali.com/aboutme/#feed-meeee">Contact</a></li>
             </ul>
           </div>
 
