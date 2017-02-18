@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Navigation from './common/Navigation';
 import Header from './common/Header';
 import Footer from './common/Footer';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
   }
@@ -24,3 +24,9 @@ export default class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  children: PropTypes.object.isRequired
+}
+
+export default App;
