@@ -6,6 +6,20 @@ export default class Navigation extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    window.removeEventListener('scroll', false);
+    window.addEventListener('scroll', (event) => {
+      let navBar = document.querySelector('nav.navbar');
+      let doc = document.documentElement;
+      let top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+      if (top > 50) {
+        navBar.classList.add('top-nav-short');
+      } else {
+        navBar.classList.remove('top-nav-short');
+      }
+    });
+  }
+
   render() {
     return (
       <nav className="navbar navbar-default navbar-fixed-top navbar-custom">
