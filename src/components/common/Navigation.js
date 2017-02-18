@@ -1,3 +1,4 @@
+/* eslint no-useless-constructor: "off" */
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
 

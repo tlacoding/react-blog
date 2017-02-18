@@ -1,3 +1,4 @@
+/* eslint no-useless-constructor: "off" */
 import React, { Component, PropTypes } from 'react';
 
 import Navigation from './common/Navigation';
