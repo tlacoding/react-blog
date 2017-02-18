@@ -18,12 +18,12 @@ export default class Navigation extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href={ siteConfig.SITE_URL}>{siteConfig.SITE_TITLE}</a>
+            <a className="navbar-brand" href={siteConfig.SITE_URL}>{siteConfig.SITE_TITLE}</a>
           </div>
 
           <div className="collapse navbar-collapse" id="main-navbar">
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="/beautiful-jekyll/">Home</a></li>
+              <li><a href={siteConfig.SITE_URL}>Home</a></li>
               <li><a href="http://deanattali.com">About me</a></li>
               <li><a href="http://deanattali.com/aboutme/#feed-meeee">Support me</a></li>
             </ul>
