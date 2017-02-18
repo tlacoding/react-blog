@@ -10,9 +10,9 @@ const Header = () => {
           <div className="row">
             <div className="col-md-12">
               <div className="page-heading">
-                <h1>Hello!</h1>
+                <h1>Hello, Genius!</h1>
                 <hr className="small" />
-                <span className="page-subheading">Lưu lại mọi thứ trong quá trình tìm hiểu các công nghệ mới</span>
+                <span className="page-subheading">Hãy cùng nhau tìm hiểu lập trình</span>
               </div>
             </div>
           </div>
