@@ -6,12 +6,12 @@ export default function(state = initialState.post, action) {
   switch (action.type) {
 
     case types.FETCH_POSTS:
-      return {...state, postsList: { posts:{}, error: null, loading: true}};
+      return {...state, postsList: { posts:[], error: null, loading: true}};
     case types.FETCH_POSTS_SUCCESS:
       return {...state, postsList: { posts: action.payload, error: null, loading: false}};
     case types.FETCH_POSTS_FAILURE:
       error = action.payload || {message: action.payload.message};
-      return {...state, postsList: { posts:{}, error: error, loading: false}};
+      return {...state, postsList: { posts:[], error: error, loading: false}};
 
     case types.FETCH_POST:
       return {...state, activePost: { post: null, error: null, loading: true}};
@@ -19,7 +19,7 @@ export default function(state = initialState.post, action) {
       return {...state, activePost: { post: action.payload, error: null, loading: false}};
     case types.FETCH_POST_FAILURE:
       error = action.payload || {message: action.payload.message};
-      return {...state, activePost: { post:{}, error: error, loading: false}};
+      return {...state, activePost: { post: null, error: error, loading: false}};
 
     default:
       return state;
