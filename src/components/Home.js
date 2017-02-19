@@ -3,9 +3,16 @@ import React, { Component } from 'react';
 
 import Header from './common/Header';
 
+import { getPosts, getPost } from '../api/firebaseApi';
+
 export default class Home extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    getPosts().then((value) => { console.log(value) });
+    getPost('-IKo28nwJLH0Nc5XeFmj').then((value) => { console.log(value) })
   }
 
   render() {
