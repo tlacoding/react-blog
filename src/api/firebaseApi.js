@@ -8,7 +8,13 @@ export const fetchPosts = () => {
   let database = firebase.database();
   let postsRef = database.ref('posts');
   return postsRef.once('value').then((snapshot) => {
-    return { type: 'success', payload: snapshot.val()};
+    let posts = [];
+    snapshot.forEach(function(childSnapshot) {
+      let key = childSnapshot.key;
+      let childData = childSnapshot.val();
+      posts.push({...{key}, ...childData});
+    });
+    return { type: 'success', payload: posts};
   })
   .catch((error) => {
     return { type: 'error', payload: error};

@@ -1,4 +1,4 @@
-import { combineReducers } form 'redux';
+import { combineReducers } from 'redux';
 import posts from './postsReducer';
 
 const rootReducer = combineReducers({

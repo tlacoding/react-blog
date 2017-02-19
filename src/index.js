@@ -2,10 +2,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
 import * as firebase from 'firebase';
 
 import './styles/main.css';
 
+import configureStore from './store/configureStore';
 import routes from './routers';
 
 var config = {
@@ -17,7 +19,11 @@ var config = {
 };
 firebase.initializeApp(config);
 
+const store = configureStore();
+
 ReactDOM.render(
-  <Router history={browserHistory} routes={routes} />,
+  <Provider store={store}>
+    <Router history={browserHistory} routes={routes} />
+  </Provider>,
   document.getElementById('root')
 );

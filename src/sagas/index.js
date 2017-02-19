@@ -1,4 +1,4 @@
-import import { fork } from 'redux-saga/effects'
+import { fork } from 'redux-saga/effects'
 import { watchFetchPosts } from './postsWatcher';
 
 export default function* startSaga() {

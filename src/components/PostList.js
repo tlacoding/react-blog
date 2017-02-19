@@ -1,9 +1,10 @@
 /* eslint no-useless-constructor: "off" */
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
 import Header from './common/Header';
 
-import { fetchPosts, fetchPost } from '../api/firebaseApi';
+import { fetchPostsAction } from '../actions/postActions';
 
 class PostList extends Component {
   constructor(props) {
@@ -11,32 +12,17 @@ class PostList extends Component {
   }
 
   componentDidMount() {
-    fetchPosts().then((value) => { console.log(value) });
-    fetchPost('-IKo28nwJLH0Nc5XeFmj').then((value) => { console.log(value) })
+    console.log('DIDMOUNT');
+    this.props.dispatch(fetchPostsAction());
   }
 
   render() {
+    console.log(this.props.postsList, 'postList');
     return (
       <div className="row">
         <div className="col-md-12">
           <Header />
           <div className="posts-list">
-            <article className="post-preview">
-              <a href="/beautiful-jekyll/2015-02-26-flake-it-till-you-make-it/">
-                <h2 className="post-title">Flake it till you make it</h2>
-                <h3 className="post-subtitle">
-                Excerpt from Soulshaping by Jeff Brown
-                </h3>
-              </a>
-              <p className="post-meta">
-              Posted on February 26, 2015
-              </p>
-
-              <div className="post-entry">
-              Under what circumstances should we step off a path? When is it essential that we finish what we start? If I bought a bag of peanuts and had an allergic reaction, no one would fault me if I threw it out. If I ended a relationship with a woman who...
-              <a href="/beautiful-jekyll/2015-02-26-flake-it-till-you-make-it/" className="post-read-more">Read More</a>
-              </div>
-            </article>
 
             <article className="post-preview">
               <a href="/beautiful-jekyll/2015-02-20-test-markdown/">
@@ -89,4 +75,10 @@ class PostList extends Component {
   }
 }
 
-export default PostList;
+const mapStateToProps = (state) => {
+  return {
+    postsList: state.posts.postsList
+  };
+}
+
+export default connect(mapStateToProps)(PostList);

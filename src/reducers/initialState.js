@@ -1,7 +1,7 @@
 export default {
   post: {
     postsList: {
-      posts: {},
+      posts: [],
       loading: false,
       error: null
     },
