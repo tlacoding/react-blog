@@ -1,0 +1,9 @@
+.post-preview .post-entry {
+  margin-bottom: 20px;
+}
+
+.post-preview a:focus,
+.post-preview a:hover {
+  text-decoration: none;
+  color: #fff;
+}

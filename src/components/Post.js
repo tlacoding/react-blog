@@ -10,7 +10,7 @@ const Post = ({ post }) => {
       <p className="post-meta">Posted on { created.getDate() }</p>
 
       <div className="post-entry">{ post.summary }</div>
-      <a href={ "/post/" + post.key } className="post-read-more">Read More</a>
+      <a href={ "/post/" + post.key } className="btn btn-default">Read More</a>
     </article>
   );
 };
