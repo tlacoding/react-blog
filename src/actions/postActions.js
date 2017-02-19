@@ -1,11 +1,10 @@
 import * as types from '../constants/actionTypes';
 
-const fetchPostsAction = (payload) => ({
+const fetchPostsAction = () => ({
   type: types.FETCH_POSTS
-  payload
 });
 
-const fetchPostAction = (post) => ({
+const fetchPostAction = (payload) => ({
   type: types.FETCH_POST,
-  post
+  payload
 })

@@ -8,7 +8,10 @@ export const fetchPosts = () => {
   let database = firebase.database();
   let postsRef = database.ref('posts');
   return postsRef.once('value').then((snapshot) => {
-    return snapshot.val();
+    return { type: 'success', payload: snapshot.val()};
+  })
+  .catch((error) => {
+    return { type: 'error', payload: error};
   });
 };
 
