@@ -1,8 +1,6 @@
 /* eslint no-useless-constructor: "off" */
 import React from 'react';
 
-import * as siteConfig from '../../constants/siteConfig';
-
 const Header = () => {
   return (
     <header className="header-section ">

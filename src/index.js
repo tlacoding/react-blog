@@ -7,7 +7,6 @@ import * as firebase from 'firebase';
 import './styles/main.css';
 
 import routes from './routers';
-import App from './components/App';
 
 var config = {
   apiKey: "AIzaSyBPylmACEz_psNitIB60Yn72MqcDPIk6_o",
@@ -19,5 +18,6 @@ var config = {
 firebase.initializeApp(config);
 
 ReactDOM.render(
-  <Router history={browserHistory} routes={routes} />, document.getElementById('root')
+  <Router history={browserHistory} routes={routes} />,
+  document.getElementById('root')
 );

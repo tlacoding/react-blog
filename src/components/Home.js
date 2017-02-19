@@ -1,3 +1,4 @@
+/* eslint no-useless-constructor: "off" */
 import React, { Component } from 'react';
 
 export default class Home extends Component {
