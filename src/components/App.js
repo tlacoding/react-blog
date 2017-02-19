@@ -2,7 +2,6 @@
 import React, { Component, PropTypes } from 'react';
 
 import Navigation from './common/Navigation';
-import Header from './common/Header';
 import Footer from './common/Footer';
 
 class App extends Component {
@@ -14,12 +13,7 @@ class App extends Component {
     return (
       <div>
         <Navigation />
-        <Header />
-        <div className="container" role="main">
-          <div className="row">
-            <div className="col-md-12">{this.props.children}</div>
-          </div>
-        </div>
+        <div className="container" role="main">{this.props.children}</div>
         <Footer />
       </div>
     );
