@@ -1,10 +1,10 @@
 import * as firebase from 'firebase';
 
 /**
-* Get all posts from firebase
+* Fetch all posts from firebase
 * @return { Array }
 */
-export const getPosts = () => {
+export const fetchPosts = () => {
   let database = firebase.database();
   let postsRef = database.ref('posts');
   return postsRef.once('value').then((snapshot) => {
@@ -13,11 +13,11 @@ export const getPosts = () => {
 };
 
 /**
-* Get post detail from post id
+* Fetch post detail from post id
 * @params { string } postId
 * @return { Object }
 */
-export const getPost = (postId) => {
+export const fetchPost = (postId) => {
   let database = firebase.database();
   let postsRef = database.ref('posts/' + postId);
   return postsRef.once('value').then((snapshot) => {
@@ -29,7 +29,7 @@ export const getPost = (postId) => {
  * Add new post with generated key
  * @params { Object } data
  */
-export const addNewPost = (data) => {
+export const createPost = (data) => {
   let database = firebase.database();
   let postsRef = database.ref('posts');
   let newPost = postsRef.push();
