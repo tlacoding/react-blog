@@ -1,6 +1,8 @@
 /* eslint no-useless-constructor: "off" */
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import NProgress from 'nprogress';
 
 import Header from './common/Header';
 import Post from './Post';
@@ -20,18 +22,28 @@ class PostList extends Component {
     let { posts, error, loading } = this.props.postsList;
     let postsMarkup = '';
     if (loading) {
-      postsMarkup = 'Loading';
+      NProgress.start();
+      NProgress.set(0.4);
+      postsMarkup = '';
     } else {
-      console.log(posts);
       postsMarkup = posts.map((post, index) => (
         <Post post={post} key={index}/>
       ));
+      NProgress.done();
     }
     return (
       <div className="row">
         <div className="col-md-12">
           <Header />
-          <div className="posts-list">{postsMarkup}</div>
+          <div className="posts-list">
+            <ReactCSSTransitionGroup
+              transitionName="post-list-animate"
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={300}
+            >
+              {postsMarkup}
+            </ReactCSSTransitionGroup>
+          </div>
         </div>
       </div>
     );

@@ -2,8 +2,23 @@
   margin-bottom: 20px;
 }
 
-.post-preview a:focus,
-.post-preview a:hover {
+.post-preview a.btn-default:focus,
+.post-preview a.btn-default:hover {
   text-decoration: none;
   color: #fff;
+}
+
+.post-list-animate-enter {
+  opacity: 0.01;
+}
+.post-list-animate-enter.post-list-animate-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.post-list-animate-leave {
+  opacity: 1;
+}
+.post-list-animate-leave.post-list-animate-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

@@ -3,6 +3,7 @@
 @charset 'UTF-8';
 
 /* 1. Vendors */
+@import 'vendors/nprogress.css';
 
 /* 2. Configuration and helpers */
 
