@@ -31,6 +31,9 @@ export const fetchPost = (postId) => {
   let postsRef = database.ref('posts/' + postId);
   return postsRef.once('value').then((snapshot) => {
     return snapshot.val();
+  })
+  .catch((error) => {
+    return error;
   });
 };
 
