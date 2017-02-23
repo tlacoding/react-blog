@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Post = ({ post }) => {
+const PostPreview = ({ post }) => {
   let created = new Date(post.created * 1000);
   return (
     <article className="post-preview">
@@ -15,4 +15,4 @@ const Post = ({ post }) => {
   );
 };
 
-export default Post;
+export default PostPreview;

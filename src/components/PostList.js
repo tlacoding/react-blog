@@ -5,7 +5,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import NProgress from 'nprogress';
 
 import Header from './common/Header';
-import Post from './Post';
+import PostPreview from './PostPreview';
 
 import { fetchPostsAction } from '../actions/postActions';
 
@@ -27,7 +27,7 @@ class PostList extends Component {
       postsMarkup = '';
     } else {
       postsMarkup = posts.map((post, index) => (
-        <Post post={post} key={index}/>
+        <PostPreview post={post} key={index}/>
       ));
       NProgress.done();
     }
