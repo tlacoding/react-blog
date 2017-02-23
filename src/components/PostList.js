@@ -34,7 +34,7 @@ class PostList extends Component {
     return (
       <div className="row">
         <div className="col-md-12">
-          <Header />
+          <Header title="Hello, Genius!" subTitle="Hãy cùng nhau tìm hiểu lập trình"/>
           <div className="posts-list">
             <ReactCSSTransitionGroup
               transitionName="post-list-animate"
