@@ -1,5 +1,8 @@
 /* eslint no-useless-constructor: "off" */
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+
+import { fetchPostAction } from '../actions/postActions'
 
 import Header from './common/Header';
 
@@ -9,7 +12,9 @@ class PostDetail extends Component {
   }
 
   componentDidMount() {
-    console.log();
+    let { postId } = this.props.params;
+    let { dispatch } = this.props;
+    dispatch(fetchPostAction(postId));
   }
 
   render() {
@@ -26,8 +31,10 @@ class PostDetail extends Component {
   }
 }
 
-// PostDetail.propTypes = {
+const mapStateToProps = (state) => {
+  return {
+    activePost: state.posts.activePost
+  };
+}
 
-// }
-
-export default PostDetail;
+export default connect(mapStateToProps)(PostDetail);

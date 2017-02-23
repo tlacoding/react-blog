@@ -4,7 +4,7 @@ export const fetchPostsAction = () => ({
   type: types.FETCH_POSTS
 });
 
-export const fetchPostAction = (payload) => ({
+export const fetchPostAction = (postId) => ({
   type: types.FETCH_POST,
-  payload
+  postId
 })
