@@ -4,7 +4,7 @@ import React from 'react';
 const Header = ({title, subTitle}) => {
   let subTitleMarkup = ''
   if (subTitle !== undefined) {
-    let subTitleMarkup = (<span className="page-subheading">{ subTitle }</span>);
+    subTitleMarkup = (<span className="page-subheading">{ subTitle }</span>);
   }
 
   return (
