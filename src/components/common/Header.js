@@ -1,14 +1,14 @@
 /* eslint no-useless-constructor: "off" */
 import React from 'react';
 
-const Header = () => {
+const Header = ({title, subTitle}) => {
   return (
     <header className="header-section ">
       <div className="intro-header no-img">
         <div className="page-heading">
-          <h1>Hello, Genius!</h1>
+          <h1>{ title }</h1>
           <hr className="small" />
-          <span className="page-subheading">Hãy cùng nhau tìm hiểu lập trình</span>
+          <span className="page-subheading">{ subTitle }</span>
         </div>
       </div>
     </header>
