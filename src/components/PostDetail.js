@@ -18,42 +18,30 @@ class PostDetail extends Component {
     let { postId } = this.props.params;
     let { dispatch } = this.props;
     dispatch(fetchPostAction(postId));
+    NProgress.start();
   }
 
   render() {
     let { post, error, loading } = this.props.activePost;
-    let postMarkup = '';
-    let header = '';
-    if (loading) {
-      header = (
-        <header className="header-section ">
-          <div className="intro-header no-img"></div>
-        </header>
-      );
-      NProgress.start();
-      NProgress.set(0.4);
-    } else {
-      let created = formatPostDate(post.created);
-      header = (<Header type="postHeading" title={post.title} postMeta={created} />);
-      postMarkup = (
-        <article role="main" className="blog-post">
-          {post.body}
-        </article>
-      );
+    if (!loading)
       NProgress.done();
-    }
 
     return (
       <div className="row">
         <div className="col-md-12">
-          { header }
+          { loading ? '' :
+            (<Header type="postHeading"
+                    title={post.title}
+                    postMeta={formatPostDate(post.created)}
+            />)
+          }
           <article role="main" className="blog-post">
             <ReactCSSTransitionGroup
               transitionName="post-list-animate"
               transitionEnterTimeout={500}
               transitionLeaveTimeout={300}
             >
-            { loading ? '' : postMarkup }
+            { loading ? '' : (<div>{post.body}</div>) }
             </ReactCSSTransitionGroup>
           </article>
         </div>
