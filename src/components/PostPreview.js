@@ -1,17 +1,14 @@
 import React from 'react';
 
+import { formatPostDate } from '../ultils';
+
 const PostPreview = ({ post }) => {
-  let created = new Date(post.created * 1000);
-  let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   return (
     <article className="post-preview">
       <a href={ "/post/" + post.key }>
         <h2 className="post-title">{ post.title }</h2>
       </a>
-      <p className="post-meta">Posted on {
-        days[created.getDay()] + ', ' +
-        created.getDate() + ' ' +
-        created.getFullYear() }
+      <p className="post-meta">Posted on { formatPostDate(post.created) }
       </p>
 
       <div className="post-entry">{ post.summary }</div>

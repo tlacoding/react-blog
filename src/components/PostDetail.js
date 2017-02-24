@@ -17,8 +17,8 @@ class PostDetail extends Component {
   componentDidMount() {
     let { postId } = this.props.params;
     let { dispatch } = this.props;
-    dispatch(fetchPostAction(postId));
     NProgress.start();
+    dispatch(fetchPostAction(postId));
   }
 
   render() {

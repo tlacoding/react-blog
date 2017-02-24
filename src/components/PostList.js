@@ -14,23 +14,16 @@ class PostList extends Component {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    NProgress.start();
     this.props.dispatch(fetchPostsAction());
   }
 
   render() {
     let { posts, error, loading } = this.props.postsList;
-    let postsMarkup = '';
-    if (loading) {
-      NProgress.start();
-      NProgress.set(0.4);
-      postsMarkup = '';
-    } else {
-      postsMarkup = posts.map((post, index) => (
-        <PostPreview post={post} key={index}/>
-      ));
+    if (!loading)
       NProgress.done();
-    }
+
     return (
       <div className="row">
         <div className="col-md-12">
@@ -41,7 +34,11 @@ class PostList extends Component {
               transitionEnterTimeout={500}
               transitionLeaveTimeout={300}
             >
-              {postsMarkup}
+              { loading ? '' :
+                posts.map((post, index) => (
+                  <PostPreview post={post} key={index}/>
+                ))
+              }
             </ReactCSSTransitionGroup>
           </div>
         </div>
