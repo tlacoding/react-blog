@@ -2,6 +2,10 @@
   margin-bottom: 20px;
 }
 
+.posts-list {
+  min-height: 300px;
+}
+
 .post-preview a.btn-default:focus,
 .post-preview a.btn-default:hover {
   text-decoration: none;

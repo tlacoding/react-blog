@@ -2,13 +2,13 @@ export default {
   post: {
     postsList: {
       posts: [],
-      loading: false,
+      loading: true,
       error: null
     },
     activePost: {
       post: null,
       error: null,
-      loading: false
+      loading: true
     }
   }
 };
