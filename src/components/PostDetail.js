@@ -41,7 +41,7 @@ class PostDetail extends Component {
               transitionEnterTimeout={500}
               transitionLeaveTimeout={300}
             >
-            { loading ? '' : (<div>{post.body}</div>) }
+            { loading ? '' : (<div dangerouslySetInnerHTML={{__html: post.body}} />) }
             </ReactCSSTransitionGroup>
           </article>
         </div>
