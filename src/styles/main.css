@@ -9,6 +9,7 @@
 
 /* 3. Base stuff */
 @import 'base/_base.css';
+@import 'base/_form.css';
 
 /* 4. Layout-related sections */
 
