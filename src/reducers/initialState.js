@@ -16,7 +16,7 @@ export default {
       username: null,
       password: null
     },
-    sending: false
+    sending: false,
     loggedIn: false,
     userInfo: {}
   }
