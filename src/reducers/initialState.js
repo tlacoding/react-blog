@@ -10,5 +10,14 @@ export default {
       error: null,
       loading: true
     }
+  },
+  auth: {
+    formState: {
+      username: null,
+      password: null
+    },
+    sending: false
+    loggedIn: false,
+    userInfo: {}
   }
 };
