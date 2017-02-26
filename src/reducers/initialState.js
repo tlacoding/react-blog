@@ -18,6 +18,5 @@ export default {
     },
     sending: false,
     loggedIn: false,
-    userInfo: {}
   }
 };
