@@ -18,5 +18,6 @@ export default {
     },
     sending: false,
     loggedIn: false,
+    error: null
   }
 };
