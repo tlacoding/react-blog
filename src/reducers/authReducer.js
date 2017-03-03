@@ -9,7 +9,7 @@ export default function(state = initialState.auth, action) {
     case types.AUTH_SENDING_REQUEST:
       return {...state, sending: true};
     case types.AUTH_SET_NEW:
-      return {...state, loggedIn: action.newAuthState};
+      return {...state, loggedIn: action.newAuthState, user: action.user};
     case types.AUTH_REQUEST_ERROR:
       return {...state, error: action.error};
     case types.AUTH_CLEAR_ERROR:
