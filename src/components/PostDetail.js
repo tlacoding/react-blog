@@ -2,7 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import NProgress from 'nprogress';
+import { PageProgress } from '../ultils';
 
 import { fetchPostAction } from '../actions/postActions'
 import { formatPostDate } from '../ultils';
@@ -17,14 +17,14 @@ class PostDetail extends Component {
   componentDidMount() {
     let { postId } = this.props.params;
     let { dispatch } = this.props;
-    NProgress.start();
+    PageProgress.start();
     dispatch(fetchPostAction(postId));
   }
 
   render() {
     let { post, error, loading } = this.props.activePost;
     if (!loading)
-      NProgress.done();
+      PageProgress.done();
 
     return (
       <div className="row">

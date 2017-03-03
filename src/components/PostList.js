@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import NProgress from 'nprogress';
+import { PageProgress } from '../ultils';
 
 import Header from './common/Header';
 import PostPreview from './PostPreview';
@@ -15,14 +15,14 @@ class PostList extends Component {
   }
 
   componentDidMount() {
-    NProgress.start();
+    PageProgress.start();
     this.props.dispatch(fetchPostsAction());
   }
 
   render() {
     let { posts, error, loading } = this.props.postsList;
     if (!loading)
-      NProgress.done();
+      PageProgress.done();
 
     return (
       <div className="row">
