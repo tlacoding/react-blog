@@ -1,8 +1,13 @@
-import { put, call } from 'redux-saga/effects';
+import { put, call, takeLatest } from 'redux-saga/effects';
 import { fetchPosts, fetchPost } from '../api/firebaseApi';
 import * as types from '../constants/actionTypes';
 
-export function* fetchPostsSaga() {
+export default function* watchFetchPosts() {
+  yield takeLatest(types.FETCH_POSTS, fetchPostsSaga);
+  yield takeLatest(types.FETCH_POST, fetchPostSaga);
+}
+
+function* fetchPostsSaga() {
   try {
     const response = yield call(fetchPosts);
     if (response.type === 'success') {
@@ -15,7 +20,7 @@ export function* fetchPostsSaga() {
   }
 }
 
-export function* fetchPostSaga({ postId }) {
+function* fetchPostSaga({ postId }) {
   try {
     const response = yield call(fetchPost, postId);
     yield put({ type: types.FETCH_POST_SUCCESS, payload: response });
