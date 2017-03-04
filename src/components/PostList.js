@@ -20,7 +20,7 @@ class PostList extends Component {
   }
 
   render() {
-    let { posts, error, loading } = this.props.postsList;
+    let { posts, loading } = this.props.postsList;
     if (!loading)
       PageProgress.done();
 

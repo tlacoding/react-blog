@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = ({type, title, subTitle, postMeta}) => {
   let headerContentMarkup = '';
-  if (type == 'pageHeading' || type === undefined) {
+  if (type === 'pageHeading' || type === undefined) {
     let subTitleMarkup = ''
     if (subTitle !== undefined) {
       subTitleMarkup = (<span className="page-subheading">{ subTitle }</span>);
@@ -16,7 +16,7 @@ const Header = ({type, title, subTitle, postMeta}) => {
         { subTitleMarkup }
       </div>
     );
-  } else if (type == 'postHeading') {
+  } else if (type === 'postHeading') {
     headerContentMarkup = (
       <div className="post-heading">
         <h1>{ title }</h1>

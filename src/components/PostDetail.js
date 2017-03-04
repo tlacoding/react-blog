@@ -22,7 +22,7 @@ class PostDetail extends Component {
   }
 
   render() {
-    let { post, error, loading } = this.props.activePost;
+    let { post, loading } = this.props.activePost;
     if (!loading)
       PageProgress.done();
 
@@ -48,6 +48,11 @@ class PostDetail extends Component {
       </div>
     );
   }
+}
+
+PostDetail.propTypes = {
+  activePost: PropTypes.object,
+  params: PropTypes.object
 }
 
 const mapStateToProps = (state) => {

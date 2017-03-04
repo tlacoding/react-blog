@@ -24,6 +24,8 @@ class Login extends Component {
       case 'password':
         dispatch(changeFormState({...this.props.auth.formState, password: event.target.value}));
         break;
+      default:
+        break;
     }
   }
 
@@ -46,6 +48,10 @@ class Login extends Component {
       </div>
     );
   }
+}
+
+Login.propTypes = {
+  auth: PropTypes.object
 }
 
 const mapStatetoProps = (state) => {

@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+/* eslint no-useless-constructor: "off" */
+import React, { Component , PropTypes} from 'react';
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
   constructor(props) {
     super(props);
   }
@@ -41,3 +42,11 @@ export default class LoginForm extends Component {
     );
   }
 };
+
+LoginForm.propTypes = {
+  data: PropTypes.object,
+  handleChangeInput: PropTypes.func,
+  handleSubmit: PropTypes.func
+}
+
+export default LoginForm;
