@@ -13,8 +13,8 @@ export default {
   },
   auth: {
     formState: {
-      username: null,
-      password: null
+      username: '',
+      password: ''
     },
     sending: false,
     loggedIn: false,
