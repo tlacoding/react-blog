@@ -7,10 +7,17 @@ class LoginForm extends Component {
   }
 
   render() {
-    let { data, handleChangeInput, handleSubmit} = this.props;
+    let { data, handleChangeInput, handleSubmit, error } = this.props;
     return (
       <div className="col-md-6 col-md-offset-3" style={{marginTop: '45px'}}>
         <form onSubmit={handleSubmit}>
+          { error ? (
+            <div className='form-error-wrapper'>
+              <p className='form-error'>
+                {error}
+              </p>
+            </div>
+          ): null }
           <div className="form-group">
             <label htmlFor="email">Email address:</label>
             <input

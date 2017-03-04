@@ -2,7 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { changeFormState } from '../actions/authActions';
+import { changeFormState, requestError, login } from '../actions/authActions';
 
 import Header from './common/Header';
 import LoginForm from './common/LoginForm.js'
@@ -13,6 +13,7 @@ class Login extends Component {
 
     this.handleChangeInput = this.handleChangeInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.validateData = this.validateData.bind(this);
   }
 
   handleChangeInput(event) {
@@ -31,7 +32,29 @@ class Login extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('submit');
+    event.stopPropagation();
+
+    let { dispatch } = this.props;
+    let formCurrentState = this.props.auth.formState;
+    let validation = this.validateData(formCurrentState);
+    if (validation.error) {
+      dispatch(requestError(validation.message));
+    } else {
+      dispatch(login(formCurrentState));
+    }
+  }
+
+  validateData(formState) {
+    // Check empty
+    if (formState.username ==='' || formState.username === null) {
+      return { error: true, message: 'You have to enter username.'}
+    }
+
+    if (formState.password === '' || formState.password === null) {
+      return { error: true, message: 'You have to enter password.'}
+    }
+
+    return { error: false };
   }
 
   render() {
@@ -44,6 +67,7 @@ class Login extends Component {
           data={this.props.auth.formState}
           handleChangeInput={this.handleChangeInput}
           handleSubmit={this.handleSubmit}
+          error={this.props.auth.error}
         />
       </div>
     );
