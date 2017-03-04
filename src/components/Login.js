@@ -34,14 +34,14 @@ class Login extends Component {
     event.preventDefault();
     event.stopPropagation();
 
-    let { formCurrentState, sending } = this.props.auth;
+    let { formState, sending } = this.props.auth;
     if (!sending) {
       let { dispatch } = this.props;
-      let validation = this.validateData(formCurrentState);
+      let validation = this.validateData(formState);
       if (validation.error) {
         dispatch(requestError(validation.message));
       } else {
-        dispatch(login(formCurrentState));
+        dispatch(login(formState));
       }
     }
   }
