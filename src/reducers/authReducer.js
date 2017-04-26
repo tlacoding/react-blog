@@ -6,7 +6,7 @@ export default function(state = initialState.auth, action) {
     case types.AUTH_CHANGE_FORM:
       return {...state, formState: action.newFormState};
     case types.AUTH_SENDING_REQUEST:
-      return {...state, sending: true};
+      return {...state, sending: action.sending};
     case types.AUTH_SET_NEW:
       return {...state, loggedIn: action.newAuthState, user: action.user};
     case types.AUTH_REQUEST_ERROR:

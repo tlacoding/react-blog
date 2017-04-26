@@ -2,7 +2,7 @@ import { put, call, takeLatest } from 'redux-saga/effects';
 import { fetchPosts, fetchPost } from '../api/firebaseApi';
 import * as types from '../constants/actionTypes';
 
-export default function* watchFetchPosts() {
+export default function* watchPosts() {
   yield takeLatest(types.FETCH_POSTS, fetchPostsSaga);
   yield takeLatest(types.FETCH_POST, fetchPostSaga);
 }

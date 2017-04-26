@@ -1,6 +1,8 @@
 import { fork } from 'redux-saga/effects'
-import watchFetchPosts from './postsSaga';
+import watchPosts from './postsSaga';
+import watchAuth from './authSaga';
 
 export default function* startSaga() {
-  yield fork(watchFetchPosts);
+  yield fork(watchPosts);
+  yield fork(watchAuth);
 }
